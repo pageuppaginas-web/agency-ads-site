@@ -16,7 +16,7 @@
 }
 
 * { box-sizing: border-box; }
-html { scroll-behavior: smooth; scroll-padding-top: 92px; }
+html { scroll-behavior: smooth; scroll-padding-top: 104px; }
 body { margin: 0; background: var(--bg); color: var(--ink); font-family: var(--font-body); font-size: 16px; line-height: 1.6; -webkit-font-smoothing: antialiased; }
 body::before { position: fixed; z-index: -1; inset: 0; pointer-events: none; content: ""; opacity: .16; background-image: radial-gradient(rgba(255,255,255,.24) .6px, transparent .6px); background-size: 5px 5px; mask-image: linear-gradient(to bottom, transparent, #000 25%, transparent 90%); }
 a { color: inherit; text-decoration: none; }
@@ -29,9 +29,10 @@ button:focus-visible, a:focus-visible, input:focus-visible, select:focus-visible
 .skip-link:focus { transform: translateY(0); }
 
 .site-header { position: sticky; z-index: 20; top: 0; border-bottom: 1px solid rgba(255,255,255,.065); background: rgba(8,9,13,.84); backdrop-filter: blur(18px); }
-.header-inner { display: flex; width: min(1320px, calc(100% - 64px)); min-height: 78px; align-items: center; justify-content: space-between; margin-inline: auto; }
-.brand, .footer-brand { display: inline-flex; align-items: center; }
-.brand img { display: block; width: 132px; height: 54px; object-fit: contain; object-position: left center; }
+.header-inner { display: flex; width: min(1320px, calc(100% - 64px)); min-height: 94px; align-items: center; justify-content: space-between; margin-inline: auto; }
+.brand, .footer-brand { display: inline-flex; flex-direction: column; align-items: flex-start; justify-content: center; gap: 0; }
+.brand img { display: block; width: 160px; height: 64px; object-fit: contain; object-position: left center; }
+.brand-tagline { display: block; margin-top: -3px; color: #bdc7d7; font-size: .46rem; font-weight: 700; letter-spacing: .06em; line-height: 1.35; white-space: nowrap; }
 .main-nav { display: flex; align-items: center; gap: 40px; color: #bbc0ce; font-size: .88rem; }
 .main-nav > a:not(.nav-cta) { transition: color .2s ease; }
 .main-nav > a:not(.nav-cta):hover, .text-link:hover { color: var(--cyan); }
@@ -216,15 +217,16 @@ h2 { margin-bottom: 0; font-size: clamp(2.6rem, 5vw, 4.25rem); font-weight: 500;
 .closing-line > span { color: #7d879a; font-size: .73rem; font-weight: 700; letter-spacing: .16em; }
 .closing-line b { color: var(--cyan); font-size: 1rem; }
 .site-footer { border-top: 1px solid var(--line); background: #07080b; }
-.footer-inner { display: grid; min-height: 128px; grid-template-columns: 130px 1fr auto; align-items: center; gap: 15px 28px; padding-block: 25px; }
-.footer-brand img { display: block; width: 108px; height: 44px; object-fit: contain; object-position: left center; }
+.footer-inner { display: grid; min-height: 128px; grid-template-columns: 165px 1fr auto; align-items: center; gap: 15px 28px; padding-block: 25px; }
+.footer-brand img { display: block; width: 148px; height: 59px; object-fit: contain; object-position: left center; }
+.footer-brand .brand-tagline { font-size: .4rem; letter-spacing: .05em; }
 .footer-inner > p { margin: 0; color: #818b9e; font-size: .78rem; }
 .back-top { justify-self: end; color: #afb7c6; font-size: .76rem; }
 .back-top:hover { color: var(--cyan); }
 .footer-inner small { grid-column: 1 / -1; padding-top: 12px; border-top: 1px solid rgba(255,255,255,.07); color: #626c7e; font-size: .68rem; }
-.whatsapp-float { position: fixed; z-index: 25; right: 24px; bottom: 23px; display: inline-flex; min-height: 54px; align-items: center; gap: 10px; padding: 0 17px; border: 1px solid rgba(255,255,255,.18); border-radius: 999px; background: #1bbd71; box-shadow: 0 10px 30px rgba(0,0,0,.32), 0 0 26px rgba(27,189,113,.18); color: white; font-size: .83rem; font-weight: 700; transition: transform .2s, box-shadow .2s; }
-.whatsapp-float:hover { transform: translateY(-3px); box-shadow: 0 12px 35px rgba(0,0,0,.36), 0 0 34px rgba(27,189,113,.28); }
-.whatsapp-float svg { width: 23px; height: 23px; fill: currentColor; }
+.whatsapp-float { position: fixed; z-index: 25; right: 22px; bottom: 22px; display: grid; width: 50px; height: 50px; place-items: center; padding: 0; border: 1px solid rgba(255,255,255,.2); border-radius: 50%; background: #1bbd71; box-shadow: 0 8px 24px rgba(0,0,0,.3), 0 0 22px rgba(27,189,113,.16); color: white; transition: transform .2s, box-shadow .2s; }
+.whatsapp-float:hover { transform: translateY(-2px); box-shadow: 0 10px 28px rgba(0,0,0,.34), 0 0 28px rgba(27,189,113,.24); }
+.whatsapp-float svg { width: 25px; height: 25px; fill: currentColor; }
 
 .js .reveal { opacity: 0; transform: translateY(18px); transition: opacity .65s ease, transform .65s cubic-bezier(.2,.7,.2,1); }
 .js .reveal.is-visible { opacity: 1; transform: translateY(0); }
@@ -238,6 +240,9 @@ h2 { margin-bottom: 0; font-size: clamp(2.6rem, 5vw, 4.25rem); font-weight: 500;
 @media (max-width: 960px) {
   .section-wrap { width: min(var(--content), calc(100% - 48px)); }
   .header-inner { width: calc(100% - 48px); }
+  .header-inner { min-height: 90px; }
+  .brand img { width: 160px; height: 64px; }
+  .brand-tagline { font-size: .42rem; letter-spacing: .06em; }
   .main-nav { gap: 19px; font-size: .81rem; }
   .hero { min-height: auto; grid-template-columns: 1.06fr .94fr; gap: 15px; padding-top: 80px; padding-bottom: 112px; }
   h1 { font-size: clamp(3.1rem, 6.4vw, 4.6rem); }
@@ -252,10 +257,11 @@ h2 { margin-bottom: 0; font-size: clamp(2.6rem, 5vw, 4.25rem); font-weight: 500;
   .plan-card-featured { grid-column: 1 / -1; }
 }
 @media (max-width: 720px) {
-  html { scroll-padding-top: 74px; }
+  html { scroll-padding-top: 88px; }
   .section-wrap { width: calc(100% - 40px); }
-  .header-inner { width: calc(100% - 40px); min-height: 70px; }
-  .brand img { width: 112px; height: 46px; }
+  .header-inner { width: calc(100% - 40px); min-height: 82px; }
+  .brand img { width: 138px; height: 55px; }
+  .brand-tagline { font-size: .4rem; letter-spacing: .05em; }
   .menu-toggle { display: grid; width: 42px; height: 42px; place-content: center; gap: 6px; border: 1px solid rgba(255,255,255,.16); border-radius: 50%; background: transparent; cursor: pointer; }
   .menu-toggle span { width: 16px; height: 1.5px; background: var(--ink); transition: transform .2s; }
   .menu-toggle[aria-expanded="true"] span:first-child { transform: translateY(3.75px) rotate(45deg); }
@@ -343,7 +349,9 @@ h2 { margin-bottom: 0; font-size: clamp(2.6rem, 5vw, 4.25rem); font-weight: 500;
   .footer-inner > p { grid-column: 1 / -1; grid-row: 2; }
   .back-top { grid-column: 2; grid-row: 1; }
   .footer-inner small { grid-row: 3; }
-  .whatsapp-float { right: 15px; bottom: 15px; min-height: 51px; padding-inline: 14px; }
+  .footer-brand img { width: 132px; height: 53px; }
+  .footer-brand .brand-tagline { font-size: .36rem; letter-spacing: .04em; }
+  .whatsapp-float { right: 15px; bottom: 15px; width: 46px; height: 46px; }
 }
 @media (max-width: 390px) {
   .section-wrap, .header-inner { width: calc(100% - 32px); }
@@ -358,7 +366,7 @@ h2 { margin-bottom: 0; font-size: clamp(2.6rem, 5vw, 4.25rem); font-weight: 500;
   .service-icon { width: 39px; height: 39px; }
   .service-copy p { font-size: .74rem; }
   .closing-line > span { font-size: .62rem; }
-  .whatsapp-float span { font-size: .77rem; }
+  .whatsapp-float svg { width: 23px; height: 23px; }
 }
 @media (prefers-reduced-motion: reduce) {
   html { scroll-behavior: auto; }

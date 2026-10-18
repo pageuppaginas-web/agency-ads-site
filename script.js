@@ -39,7 +39,6 @@ if (leadForm) {
 
     const formData = new FormData(leadForm);
     const name = String(formData.get('name') || '').trim();
-    const phone = String(formData.get('phone') || '').trim();
     const business = String(formData.get('business') || '').trim();
     const goal = String(formData.get('goal') || '').trim();
     const selectedPlan = String(formData.get('plan') || '').trim();
@@ -52,7 +51,6 @@ if (leadForm) {
       'Olá! Vim pelo site da Agency Ads e gostaria de conversar sobre tráfego pago.',
       '',
       `Nome: ${name}`,
-      `Meu WhatsApp: ${phone}`,
       `Segmento do negócio: ${business}`,
       `Meu objetivo: ${goal}`,
       `Plano de interesse: ${planLabels[selectedPlan] || 'Ainda não defini'}`,
