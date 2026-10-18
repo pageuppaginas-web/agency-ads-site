@@ -22,6 +22,15 @@ if (menuToggle && mainNav) {
 
 const leadForm = document.querySelector('#lead-form');
 const formStatus = document.querySelector('#form-status');
+const leadPlan = document.querySelector('#lead-plan');
+
+if (leadPlan) {
+  document.querySelectorAll('[data-plan-choice]').forEach((link) => {
+    link.addEventListener('click', () => {
+      leadPlan.value = link.getAttribute('data-plan-choice') || '';
+    });
+  });
+}
 
 if (leadForm) {
   leadForm.addEventListener('submit', (event) => {
@@ -33,6 +42,12 @@ if (leadForm) {
     const phone = String(formData.get('phone') || '').trim();
     const business = String(formData.get('business') || '').trim();
     const goal = String(formData.get('goal') || '').trim();
+    const selectedPlan = String(formData.get('plan') || '').trim();
+    const planLabels = {
+      google: 'Google Ads — R$ 597/mês',
+      meta: 'Meta Ads — R$ 597/mês',
+      integrado: 'Estratégia Integrada — R$ 997/mês',
+    };
     const message = [
       'Olá! Vim pelo site da Agency Ads e gostaria de conversar sobre tráfego pago.',
       '',
@@ -40,6 +55,7 @@ if (leadForm) {
       `Meu WhatsApp: ${phone}`,
       `Segmento do negócio: ${business}`,
       `Meu objetivo: ${goal}`,
+      `Plano de interesse: ${planLabels[selectedPlan] || 'Ainda não defini'}`,
     ].join('\n');
     const whatsappUrl = `https://wa.me/5577988180629?text=${encodeURIComponent(message)}`;
 
