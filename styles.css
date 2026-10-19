@@ -47,7 +47,7 @@ button:focus-visible, a:focus-visible, input:focus-visible, select:focus-visible
 .eyebrow-mark { width: 7px; height: 7px; flex: 0 0 auto; border-radius: 50%; background: var(--cyan); box-shadow: 0 0 14px rgba(92,228,241,.7); }
 h1, h2, h3, p { margin-top: 0; }
 h1, h2, h3 { font-family: var(--font-display); }
-h1 { max-width: 690px; margin-bottom: 23px; font-size: clamp(3.35rem, 6.25vw, 5.5rem); font-weight: 600; letter-spacing: -.075em; line-height: .99; }
+h1 { max-width: 690px; margin-bottom: 23px; font-size: clamp(3.35rem, 5.55vw, 5.25rem); font-weight: 600; letter-spacing: -.075em; line-height: .99; }
 h1 span, h2 span { color: transparent; background: linear-gradient(95deg, #f4f7ff 0%, #b2c6ff 42%, #52d6ed 100%); -webkit-background-clip: text; background-clip: text; }
 .hero-lede { max-width: 500px; margin-bottom: 30px; color: #aeb5c4; font-size: 1.08rem; line-height: 1.75; }
 .hero-actions { display: flex; flex-wrap: wrap; align-items: center; gap: 20px; }
@@ -355,7 +355,7 @@ h2 { margin-bottom: 0; font-size: clamp(2.6rem, 5vw, 4.25rem); font-weight: 500;
 }
 @media (max-width: 390px) {
   .section-wrap, .header-inner { width: calc(100% - 32px); }
-  h1 { font-size: 3rem; }
+  h1 { font-size: clamp(2.45rem, 11.8vw, 2.85rem); }
   .hero-actions { flex-direction: column; align-items: flex-start; }
   .hero-actions .text-link { padding-block: 4px; }
   .hero-art { height: 320px; }
