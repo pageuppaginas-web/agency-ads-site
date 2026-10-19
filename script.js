@@ -41,11 +41,11 @@ if (leadForm) {
     const name = String(formData.get('name') || '').trim();
     const business = String(formData.get('business') || '').trim();
     const goal = String(formData.get('goal') || '').trim();
-    const selectedPlan = String(formData.get('plan') || '').trim();
-    const planLabels = {
+    const selectedChannels = String(formData.get('plan') || '').trim();
+    const channelLabels = {
       google: 'Google Ads — R$ 597/mês',
       meta: 'Meta Ads — R$ 597/mês',
-      integrado: 'Estratégia Integrada — R$ 997/mês',
+      integrado: 'Google Ads + Meta Ads — R$ 997/mês',
     };
     const message = [
       'Olá! Vim pelo site da Agency Ads e gostaria de conversar sobre tráfego pago.',
@@ -53,7 +53,7 @@ if (leadForm) {
       `Nome: ${name}`,
       `Segmento do negócio: ${business}`,
       `Meu objetivo: ${goal}`,
-      `Plano de interesse: ${planLabels[selectedPlan] || 'Ainda não defini'}`,
+      `Canais que quero avaliar: ${channelLabels[selectedChannels] || 'Ainda não defini'}`,
     ].join('\n');
     const whatsappUrl = `https://wa.me/5577988180629?text=${encodeURIComponent(message)}`;
 
