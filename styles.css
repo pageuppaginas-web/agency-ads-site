@@ -213,7 +213,7 @@ h2 { margin-bottom: 0; font-size: clamp(2.6rem, 5vw, 4.25rem); font-weight: 500;
 .form-status:not(:empty) { margin-top: 12px; }
 
 .closing-line { display: flex; min-height: 150px; align-items: center; justify-content: space-between; gap: 25px; }
-.closing-line p { margin: 0; font-family: var(--font-display); font-size: clamp(1.55rem, 3vw, 2.2rem); letter-spacing: -.055em; }
+.closing-line p { margin: 0; font-family: var(--font-display); font-size: clamp(1.55rem, 3vw, 2.2rem); font-weight: 500; letter-spacing: -.055em; }
 .closing-line > span { color: #7d879a; font-size: .73rem; font-weight: 700; letter-spacing: .16em; }
 .closing-line b { color: var(--cyan); font-size: 1rem; }
 .site-footer { border-top: 1px solid var(--line); background: #07080b; }
