@@ -22,15 +22,6 @@ if (menuToggle && mainNav) {
 
 const leadForm = document.querySelector('#lead-form');
 const formStatus = document.querySelector('#form-status');
-const leadPlan = document.querySelector('#lead-plan');
-
-if (leadPlan) {
-  document.querySelectorAll('[data-plan-choice]').forEach((link) => {
-    link.addEventListener('click', () => {
-      leadPlan.value = link.getAttribute('data-plan-choice') || '';
-    });
-  });
-}
 
 if (leadForm) {
   leadForm.addEventListener('submit', (event) => {
@@ -43,9 +34,9 @@ if (leadForm) {
     const goal = String(formData.get('goal') || '').trim();
     const selectedChannels = String(formData.get('plan') || '').trim();
     const channelLabels = {
-      google: 'Google Ads — R$ 597/mês',
-      meta: 'Meta Ads — R$ 597/mês',
-      integrado: 'Google Ads + Meta Ads — R$ 997/mês',
+      google: 'Google Ads',
+      meta: 'Meta Ads',
+      integrado: 'Google Ads + Meta Ads',
     };
     const message = [
       'Olá! Vim pelo site da Agency Ads e gostaria de conversar sobre tráfego pago.',
