@@ -72,7 +72,7 @@ h1 span, h2 span { color: transparent; background: linear-gradient(95deg, #f4f7f
 .orbit-two { width: 400px; height: 280px; border-color: rgba(92,228,241,.14); transform: translate(-50%,-50%) rotate(30deg); }
 .art-caption { position: absolute; top: 28px; left: 28px; display: flex; align-items: center; gap: 9px; color: #a6b0c4; font-size: .63rem; font-weight: 700; letter-spacing: .14em; }
 .status-dot { width: 6px; height: 6px; border-radius: 50%; background: #62e7bb; box-shadow: 0 0 12px rgba(98,231,187,.8); }
-.eyebrow-mark, .status-dot, .step-number i { animation: dot-blink 2.4s steps(1, end) infinite; }
+.eyebrow-mark, .status-dot, .step-number i { animation: dot-breathe 3s ease-in-out infinite; }
 .art-core { position: absolute; top: 50%; left: 50%; display: flex; width: 108px; height: 108px; flex-direction: column; align-items: center; justify-content: center; gap: 0; transform: translate(-50%,-50%); border: 1px solid rgba(92,228,241,.65); border-radius: 31px; background: linear-gradient(145deg, #2361ef, #163a9d); box-shadow: 0 0 0 10px rgba(50,102,255,.08), 0 0 52px rgba(48,151,255,.32), inset 0 1px rgba(255,255,255,.35); animation: core-float 5s ease-in-out infinite; }
 .core-arrow { font-size: 2.4rem; font-weight: 400; line-height: 1; }
 .core-label { color: rgba(255,255,255,.85); font-family: var(--font-display); font-size: .61rem; font-weight: 700; letter-spacing: .18em; }
@@ -232,7 +232,7 @@ h2 { margin-bottom: 0; font-size: clamp(2.6rem, 5vw, 4.25rem); font-weight: 500;
 .js .reveal.is-visible { opacity: 1; transform: translateY(0); }
 @keyframes core-float { 0%,100% { transform: translate(-50%,-50%) translateY(0); } 50% { transform: translate(-50%,-50%) translateY(-9px); } }
 @keyframes scroll-dot { 0% { opacity: 0; transform: translateY(0); } 30% { opacity: 1; } 100% { opacity: 0; transform: translateY(8px); } }
-@keyframes dot-blink { 0%,49% { opacity: 1; } 50%,100% { opacity: .05; } }
+@keyframes dot-breathe { 0%,100% { transform: scale(1); } 50% { transform: scale(1.12); } }
 @keyframes whatsapp-float-pulse { 0% { box-shadow: 0 0 0 0 rgba(92,228,241,.28), 0 8px 24px rgba(50,102,255,.34); } 70% { box-shadow: 0 0 0 8px rgba(92,228,241,0), 0 8px 24px rgba(50,102,255,.34); } to { box-shadow: 0 0 0 0 rgba(92,228,241,0), 0 8px 24px rgba(50,102,255,.34); } }
 @media (prefers-reduced-motion: reduce) {
   .eyebrow-mark, .status-dot, .step-number i { animation: none; }
